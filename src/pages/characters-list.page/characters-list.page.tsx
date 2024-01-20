@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import {characters as charactersData, CharacterType} from "../../local-data/character";
+import React from 'react';
 import {CharacterCard} from "../../components/character/character-card/character-card";
+import {useAppSelector} from "../../redux/store/store";
+
 
 const CharactersListPage = () => {
-    const [characters, setCharacters] = useState<Array<CharacterType>>(charactersData)
+    const characters= useAppSelector(state=> state.characters)
     return (
         <div>
             {

@@ -79,3 +79,22 @@ export const characters: Array<CharacterType> = [
         "url": "https://rickandmortyapi.com/api/character/3",
         "created": "2017-11-04T19:09:56.428Z"
     }]
+ export const snake:CharacterType= {
+     "id": 583,
+     "name": "80's snake",
+     "status": "unknown",
+     "species": "Animal",
+     "type": "Snake",
+     "gender": "Male",
+     "origin": {
+         "name": "Snake Planet",
+         "url": "https://rickandmortyapi.com/api/location/78"
+     },
+     "location": {
+         "name": "Snake Planet",
+         "url": "https://rickandmortyapi.com/api/location/78"
+     },
+     "image": "https://rickandmortyapi.com/api/character/avatar/583.jpeg",
+     "url": "https://rickandmortyapi.com/api/character/583",
+     "created": "2020-05-07T12:29:30.948Z"
+ }
