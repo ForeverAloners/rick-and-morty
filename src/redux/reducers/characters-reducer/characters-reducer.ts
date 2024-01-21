@@ -1,4 +1,8 @@
 import {characters, CharacterType} from "../../../local-data/character";
+import exp from "node:constants";
+import {Dispatch} from "@reduxjs/toolkit";
+import axios from "axios";
+
 
 const initialState = characters
 
@@ -34,4 +38,14 @@ export const getStateAC = (state: CharacterType[]) => {
             state: state
         }
     } as const
+}
+export const getStateTC = ()=>(dispatch:Dispatch)=>{
+    const statePromise = axios.get("https://rickandmortyapi.com/api/character")
+    statePromise
+        .then((res) => {
+            dispatch(getStateAC(res.data.results))
+        })
+        .catch((error) => {
+            console.error(error)
+        })
 }

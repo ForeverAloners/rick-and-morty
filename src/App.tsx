@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 import CharactersListPage from "./pages/characters-list.page/characters-list.page";
 import {useAppDispatch} from "./redux/store/store";
-import {addSnakeAC, getStateAC} from "./redux/reducers/characters-reducer/characters-reducer";
+import {addSnakeAC, getStateTC} from "./redux/reducers/characters-reducer/characters-reducer";
 import {snake} from "./local-data/character";
-import axios from "axios";
 
 
 function App() {
@@ -13,15 +12,7 @@ function App() {
         dispatch(addSnakeAC(snake))
     }
     const getState = () => {
-        const statePromise = axios.get("https://rickandmortyapi.com/api/character")
-        statePromise
-            .then((res) => {
-                dispatch(getStateAC(res.data.results))
-            })
-            .catch((error) => {
-                console.error(error)
-            })
-        //dispatch(getStateAC())
+        dispatch(getStateTC())
     }
     return (
         <div>
