@@ -1,9 +1,10 @@
-import {combineReducers, legacy_createStore as createStore} from "@reduxjs/toolkit";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import {charactersReducer} from "../reducers/characters-reducer/characters-reducer";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import thunk from "redux-thunk"
 
 const rootReducer = combineReducers({characters: charactersReducer})
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer, applyMiddleware(thunk))
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}

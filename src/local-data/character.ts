@@ -16,9 +16,23 @@ export type CharacterType = {
         url: string
     }
     image: string
-    url: string
+    episode: string[],
+    url: string,
     created: string
 }
+export type CharactersResponseInfoType = {
+    count: number
+    pages: number
+    next: string
+    prev: string
+}
+
+
+export type CharactersResponseType = {
+    info: CharactersResponseInfoType
+    results: CharacterType[]
+}
+
 export type CharacterStatusType = "Alive" | "Dead" | "unknown"
 
 export const characters: Array<CharacterType> = [
@@ -38,6 +52,9 @@ export const characters: Array<CharacterType> = [
             "url": "https://rickandmortyapi.com/api/location/3"
         },
         "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+        "episode": [
+            "https://rickandmortyapi.com/api/episode/27"
+        ],
         "url": "https://rickandmortyapi.com/api/character/1",
         "created": "2017-11-04T18:48:46.250Z"
     },
@@ -57,6 +74,9 @@ export const characters: Array<CharacterType> = [
             "url": "https://rickandmortyapi.com/api/location/3"
         },
         "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+        "episode": [
+            "https://rickandmortyapi.com/api/episode/27"
+        ],
         "url": "https://rickandmortyapi.com/api/character/2",
         "created": "2017-11-04T18:50:21.651Z"
     },
@@ -76,6 +96,9 @@ export const characters: Array<CharacterType> = [
             "url": "https://rickandmortyapi.com/api/location/20"
         },
         "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+        "episode": [
+            "https://rickandmortyapi.com/api/episode/27"
+        ],
         "url": "https://rickandmortyapi.com/api/character/3",
         "created": "2017-11-04T19:09:56.428Z"
     }]
@@ -95,6 +118,9 @@ export const characters: Array<CharacterType> = [
          "url": "https://rickandmortyapi.com/api/location/78"
      },
      "image": "https://rickandmortyapi.com/api/character/avatar/583.jpeg",
+     "episode": [
+         "https://rickandmortyapi.com/api/episode/27"
+     ],
      "url": "https://rickandmortyapi.com/api/character/583",
      "created": "2020-05-07T12:29:30.948Z"
  }

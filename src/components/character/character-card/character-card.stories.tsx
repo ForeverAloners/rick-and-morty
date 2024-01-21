@@ -34,6 +34,9 @@ export const Default: Story = {
                 "url": "https://rickandmortyapi.com/api/location/3"
             },
             "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            "episode": [
+                "https://rickandmortyapi.com/api/episode/27"
+            ],
             "url": "https://rickandmortyapi.com/api/character/1",
             "created": "2017-11-04T18:48:46.250Z"
         }
